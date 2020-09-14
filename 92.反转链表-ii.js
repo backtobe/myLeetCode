@@ -1,0 +1,32 @@
+/*
+ * @lc app=leetcode.cn id=92 lang=javascript
+ *
+ * [92] 反转链表 II
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} m
+ * @param {number} n
+ * @return {ListNode}
+ */
+var reverseBetween = function (head, m, n) {
+    let cur = head,
+        prev = null,
+        i = 1
+
+    while () {
+        temp = cur.next
+				cur.next = pre
+				pre.next = 
+    }
+};
+// @lc code=end

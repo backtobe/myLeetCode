@@ -10,17 +10,19 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  if (s.length < 2) return s.length
-  let sIndex = 0, temp = 0, length = 1
-  for (let i = 1; i < s.length; i++) {
-    if (s.substr(sIndex, length).indexOf(s[i]) > -1) {
-      sIndex = i + 1
-      temp = 0
-    } else {
-      length = length < ++temp ? temp : length
+  let temS = {}, res = 0
+  for (let i = 0; i < s.length; i++) {
+    if (temS[s[i]] !== undefined && temS[s[i]] !== -1) {
+      let index = temS[s[i]]
+      while (index-- !== 0) {
+        temS[s[index]] <= index && (temS[s[index]] = -1)
+      }
     }
+    temS[s[i]] = i
+    length = Object.keys(temS).filter(key => temS[key] !== -1).length
+    length > res && (res = length)
   }
-  return length
+  return res
 };
 // @lc code=end
 

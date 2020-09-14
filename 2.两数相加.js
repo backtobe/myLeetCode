@@ -21,7 +21,7 @@ var addTwoNumbers = function (l1, l2) {
   const header = new ListNode('header') // 新增头
   let current = header // 新链表当前节点
   let carry = 0 // 进位标志
-  while (l1 || l2) {
+  while (l1 || l2 || carry) {
     val = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry // 数字相加
     current.next = new ListNode(val % 10) // 取余数新增节点
     current = current.next // 移动当前节点
@@ -29,7 +29,6 @@ var addTwoNumbers = function (l1, l2) {
     l1 && (l1 = l1.next) // 移动l1
     l2 && (l2 = l2.next) // 移动l2
   }
-  carry && (current.next = new ListNode(carry)) // 最高位进一处理
   return header.next
 };
 // @lc code=end
